@@ -1,0 +1,65 @@
+<!-- Parada Sánchez Liliana -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<style>
+body {
+	background: #FDD761;
+	font-family: 'Lucida Sans Unicode', 'Arial', serif;
+}
+
+div{
+	margin: 50px 270px;
+	width: 500px;
+}
+
+table {
+	background: #f6ecc6;
+	padding: 2px;
+	border: solid 2px #f5c410;
+}
+
+h1 {
+	color: white;
+	margin: 50px 0 20px;
+	text-transform: uppercase;
+	font-size: 2.6rem;
+}
+
+td {
+	padding: 5px 0;
+}
+
+input{
+	border-radius: 10px 10px 10px 10px;
+}
+</style>
+</head>
+<body>
+	<h1 style="text-align: center">Login</h1>
+	<form action="compruebaUsuario.jsp" method="post">
+		<div>
+			<table>
+				<tr>
+					<td><label for="usuario">Usuario: </label></td>
+					<td><input type="text" name="usuario" id="usuario"></td>
+				</tr>
+				<tr>
+					<td><label for="contrasena">Contraseña: </label></td>
+					<td><input type="password" name="contrasena" id="contrasena"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit"
+						name="button" id="button" value="Entrar"></td>
+				</tr>
+			</table>
+			<label>No tienes cuenta? Regístrate <a href="registro.html">Aqui</a></label>
+		</div>
+		<p>
+			<br>
+		</p>
+	</form>
+</body>
+</html>
