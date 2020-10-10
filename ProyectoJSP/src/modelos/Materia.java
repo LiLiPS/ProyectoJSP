@@ -2,9 +2,9 @@
 package modelos;
 
 public class Materia {
-	private int id_materia, id_carrera, semestre, creditos;
 	// horas_t: teóricas horas_p: prácticas
-	private String clave_materia, nombre, horas_t, horas_p;
+	private int id_materia, semestre, creditos, horas_t, horas_p;	
+	private String clave_materia, nombre, carrera, abreviaturaCarrera;
 
 	public int getIdMateria() {
 		return id_materia;
@@ -12,14 +12,6 @@ public class Materia {
 
 	public void setIdMateria(int id_materia) {
 		this.id_materia = id_materia;
-	}
-
-	public int getId_carrera() {
-		return id_carrera;
-	}
-
-	public void setId_carrera(int id_carrera) {
-		this.id_carrera = id_carrera;
 	}
 
 	public int getSemestre() {
@@ -54,20 +46,35 @@ public class Materia {
 		this.nombre = nombre;
 	}
 
-	public String getHoras_t() {
+	public int getHoras_t() {
 		return horas_t;
 	}
 
-	public void setHoras_t(String horas_t) {
+	public void setHoras_t(int horas_t) {
 		this.horas_t = horas_t;
 	}
 
-	public String getHoras_p() {
+	public int getHoras_p() {
 		return horas_p;
 	}
 
-	public void setHoras_p(String horas_p) {
+	public void setHoras_p(int horas_p) {
 		this.horas_p = horas_p;
 	}
 
+	public String getCarrera() {
+		return carrera;
+	}
+
+	public String getAbreviaturaCarrera() {
+		return abreviaturaCarrera;
+	}
+
+	public void setCarrera(String carrera) {
+		this.carrera = carrera;
+	}
+
+	public void setAbreviaturaCarrera(String abreviaturaCarrera) {
+		this.abreviaturaCarrera = abreviaturaCarrera;
+	}
 }
