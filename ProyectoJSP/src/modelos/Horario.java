@@ -3,7 +3,7 @@ package modelos;
 
 public class Horario {
 	private int id_horario, id_materia, id_usuario, alumnos;
-	private String clave_horario, aula, lunes, martes, miercoles, jueves, viernes, periodo, grupo;
+	private String clave_horario, clave_grupo, aula, lunes, martes, miercoles, jueves, viernes, periodo, grupo, turno;
 
 	public int getId_horario() {
 		return id_horario;
@@ -37,12 +37,12 @@ public class Horario {
 		this.alumnos = alumnos;
 	}
 
-	public String getClave_horario() {
-		return clave_horario;
+	public String getClave_grupo() {
+		return clave_grupo;
 	}
 
-	public void setClave_horario(String clave_horario) {
-		this.clave_horario = clave_horario;
+	public void setClave_grupo(String clave_grupo) {
+		this.clave_grupo = clave_grupo;
 	}
 
 	public String getAula() {
@@ -107,6 +107,22 @@ public class Horario {
 
 	public void setGrupo(String grupo) {
 		this.grupo = grupo;
+	}
+
+	public String getClave_horario() {
+		return clave_horario;
+	}
+
+	public void setClave_horario(String clave_horario) {
+		this.clave_horario = clave_horario;
+	}
+
+	public String getTurno() {
+		return turno;
+	}
+
+	public void setTurno(String turno) {
+		this.turno = turno;
 	}
 
 }

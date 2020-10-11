@@ -5,7 +5,7 @@ public class Usuario {
 	//horas: horas que se le asignaron al maestro por semana
 	private int id_usuario, horas;
 	//titulo: Ing. Lic.
-	private String clave_maestro, titulo, nombre, apellido_materno, apellido_paterno, usuario, contrasena, rol;
+	private String clave_usuario, titulo, nombre, apellido_materno, apellido_paterno, usuario, contrasena, rol;
 
 	public int getIdUsuario() {
 		return id_usuario;
@@ -23,12 +23,12 @@ public class Usuario {
 		this.horas = horas;
 	}
 
-	public String getClaveMaestro() {
-		return clave_maestro;
+	public String getClaveUsuario() {
+		return clave_usuario;
 	}
 
-	public void setClaveMaestro(String clave_maestro) {
-		this.clave_maestro = clave_maestro;
+	public void setClaveUsuario(String clave_usuario) {
+		this.clave_usuario = clave_usuario;
 	}
 
 	public String getTitulo() {

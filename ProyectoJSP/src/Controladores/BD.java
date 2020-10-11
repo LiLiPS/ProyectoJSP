@@ -11,7 +11,7 @@ public class BD {
         
         try{  
             Class.forName("com.mysql.cj.jdbc.Driver");  
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/alumnosweb","root","");  
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/materiasTec","root","");  
         }catch(Exception e){
         	System.out.println(e);
         }  

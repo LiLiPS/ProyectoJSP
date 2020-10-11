@@ -17,7 +17,7 @@
 </head>
 <body>
 <h1 style="text-align: center">Editar una materia</h1>
-	<form action="datos.jsp" method="post">
+	<form action="editarDatos.jsp" method="post">
 		<div>
 			<table>
 				<tr>
@@ -33,31 +33,31 @@
 				</tr>
 				<tr>
 					<td><label for="abreviaturaCarrera">Abreviatura de Carrera: </label></td>
-					<td><input type="text" name="abreviaturaCarrera" id="abreviaturaCarrera" placeholder="Ej. ISX"></td>
+					<td><input type="text" name="abreviaturaCarrera" id="abreviaturaCarrera" value=""></td>
 				</tr>
 				<tr>
 					<td><label for="carrera">Carrera: </label></td>
-					<td><input type="text" name="carrera" id="carrera"></td>
+					<td><input type="text" name="carrera" id="carrera" value=""></td>
 				</tr>
 				<tr>
 					<td><label for="semestre">Semestre: </label></td>
-					<td><input type="number" name="semestre" id="semestre"></td>
+					<td><input type="number" name="semestre" id="semestre" value=""></td>
 				</tr>
 				<tr>
 					<td><label for="horasT">Horas teóricas: </label></td>
-					<td><input type="text" name="horasT" id="horasT"></td>
+					<td><input type="text" name="horasT" id="horasT" value=""></td>
 				</tr>
 				<tr>
 					<td><label for="horasP">Horas teóricas: </label></td>
-					<td><input type="text" name="horasP" id="horasP"></td>
+					<td><input type="text" name="horasP" id="horasP" value=""></td>
 				</tr>
 				<tr>
 					<td><label for="creditos">Créditos: </label></td>
-					<td><input type="number" name="creditos" id="creditos"></td>
+					<td><input type="number" name="creditos" id="creditos" value=""></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit"
-						name="button" id="button" value="Guardar"></td>
+						name="button" id="button" value="Editar"></td>
 				</tr>
 			</table>
 		</div>

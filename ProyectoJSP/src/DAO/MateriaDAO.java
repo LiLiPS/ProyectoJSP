@@ -14,12 +14,13 @@ public class MateriaDAO {
 	
 	public static int guardarMateria(Materia m){ 
 		BD bdConexion = new BD();
-        int status = 0;  
+        int status = 0; 
+        String instruccion = "INSERT INTO materia(clave_materia,nombre,abreviatura_carrera,"
+        					+ "carrera,semestre, horas_t, horas_p, creditos) values (?,?,?,?,?,?,?,?)";
         
         try{  
             Connection con = bdConexion.getConnection();  
-            PreparedStatement ps = con.prepareStatement(  
-                         "INSERT INTO materias(numeroControl,nombre,curso,semestre) values (?,?,?,?)");  
+            PreparedStatement ps = con.prepareStatement(instruccion);  
             ps.setString(1, m.getClave_materia());  
             ps.setString(2, m.getNombre());
             ps.setString(3, m.getAbreviaturaCarrera());
@@ -42,11 +43,12 @@ public class MateriaDAO {
 	public static int actualizarMateria(Materia m){  
 		BD bdConexion = new BD();
         int status = 0;  
+        String instruccion = "update materia set clave_materia=?,nombre=?,abreviatura_carrera=?,"
+        					+ "carrera=? semestre=? horas_t=? horas_p=? creditos=? where id_materia=?";
         
         try{  
             Connection con = bdConexion.getConnection();  
-            PreparedStatement ps = con.prepareStatement(  
-                         "update alumnosWeb set numeroControl=?,nombre=?,curso=?,semestre=? where id=?");  
+            PreparedStatement ps = con.prepareStatement(instruccion);  
             ps.setString(1, m.getClave_materia());  
             ps.setString(2, m.getNombre());
             ps.setString(3, m.getAbreviaturaCarrera());
@@ -70,10 +72,11 @@ public class MateriaDAO {
 	public static int borrarMateria(int id){  
 		BD bdConexion = new BD();
         int status = 0;  
+        String instruccion = "delete from materia where id_materia=?";
         
         try{  
             Connection con = bdConexion.getConnection();  
-            PreparedStatement ps = con.prepareStatement("delete from alumnosWeb where id=?");  
+            PreparedStatement ps = con.prepareStatement(instruccion);  
             ps.setInt(1,id);  
             status=ps.executeUpdate();  
               
@@ -88,21 +91,23 @@ public class MateriaDAO {
 	public static Materia getMateriabyID(int id){
 		BD bdConexion = new BD();
         Materia m = new Materia();  
+        String instruccion = "select * from materia where id_materia=?";
           
         try{  
             Connection con = bdConexion.getConnection();  
-            PreparedStatement ps = con.prepareStatement("select * from alumnosWeb where id=?");  
+            PreparedStatement ps = con.prepareStatement(instruccion);  
             ps.setInt(1,id);  
             ResultSet rs = ps.executeQuery();  
             if(rs.next()){ 
-                m.setIdMateria(rs.getInt(1));  
-                m.setNombre(rs.getString(2));  
-                m.setAbreviaturaCarrera(rs.getString(3));  
-                m.setCarrera(rs.getString(4));  
-                m.setSemestre(rs.getInt(5));
-                m.setHoras_t(rs.getInt(6));
-                m.setHoras_p(rs.getInt(7));
-                m.setCreditos(rs.getInt(8));
+                m.setIdMateria(rs.getInt(1)); 
+                m.setClave_materia(rs.getString(2));
+                m.setNombre(rs.getString(3));  
+                m.setAbreviaturaCarrera(rs.getString(4));  
+                m.setCarrera(rs.getString(5));  
+                m.setSemestre(rs.getInt(6));
+                m.setHoras_t(rs.getInt(7));
+                m.setHoras_p(rs.getInt(8));
+                m.setCreditos(rs.getInt(9));
             }  
             con.close();  
         }catch(Exception ex){
@@ -114,22 +119,24 @@ public class MateriaDAO {
 	
 	public static List<Materia> getMaterias(){
 		BD bdConexion = new BD();
-        List<Materia> lista = new ArrayList<Materia>();  
+        List<Materia> lista = new ArrayList<Materia>();
+        String instruccion = "select * from materia";
           
         try{  
             Connection con = bdConexion.getConnection();  
-            PreparedStatement ps = con.prepareStatement("select * from alumnosWeb");  
+            PreparedStatement ps = con.prepareStatement(instruccion);  
             ResultSet rs = ps.executeQuery();  
             while(rs.next()){  
                 Materia m = new Materia();  
-                m.setIdMateria(rs.getInt(1));  
-                m.setNombre(rs.getString(2));  
-                m.setAbreviaturaCarrera(rs.getString(3));  
-                m.setCarrera(rs.getString(4));  
-                m.setSemestre(rs.getInt(5));
-                m.setHoras_t(rs.getInt(6));
-                m.setHoras_p(rs.getInt(7));
-                m.setCreditos(rs.getInt(8)); 
+                m.setIdMateria(rs.getInt(1)); 
+                m.setClave_materia(rs.getString(2));
+                m.setNombre(rs.getString(3));  
+                m.setAbreviaturaCarrera(rs.getString(4));  
+                m.setCarrera(rs.getString(5));  
+                m.setSemestre(rs.getInt(6));
+                m.setHoras_t(rs.getInt(7));
+                m.setHoras_p(rs.getInt(8));
+                m.setCreditos(rs.getInt(9));
                 lista.add(m);  
             }  
             con.close();  
@@ -142,23 +149,25 @@ public class MateriaDAO {
 	
 	public static List<Materia> getMateriasbyClave(String clave){ 
 		BD bdConexion = new BD();
-        List<Materia> lista = new ArrayList<Materia>();  
+        List<Materia> lista = new ArrayList<Materia>(); 
+        String instruccion = "select * from materia where clave_materia LIKE ?";
           
         try{  
             Connection con = bdConexion.getConnection();  
-            PreparedStatement ps = con.prepareStatement("select * from alumnosWeb where numeroControl LIKE ?");  
+            PreparedStatement ps = con.prepareStatement(instruccion);  
             ps.setString(1,"%" + clave + "%");  
             ResultSet rs = ps.executeQuery(); 
             while(rs.next()){  
                 Materia m = new Materia();  
-                m.setIdMateria(rs.getInt(1));  
-                m.setNombre(rs.getString(2));  
-                m.setAbreviaturaCarrera(rs.getString(3));  
-                m.setCarrera(rs.getString(4));  
-                m.setSemestre(rs.getInt(5));
-                m.setHoras_t(rs.getInt(6));
-                m.setHoras_p(rs.getInt(7));
-                m.setCreditos(rs.getInt(8)); 
+                m.setIdMateria(rs.getInt(1)); 
+                m.setClave_materia(rs.getString(2));
+                m.setNombre(rs.getString(3));  
+                m.setAbreviaturaCarrera(rs.getString(4));  
+                m.setCarrera(rs.getString(5));  
+                m.setSemestre(rs.getInt(6));
+                m.setHoras_t(rs.getInt(7));
+                m.setHoras_p(rs.getInt(8));
+                m.setCreditos(rs.getInt(9)); 
                 lista.add(m);  
             }  
             con.close();  
