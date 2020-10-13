@@ -44,7 +44,7 @@ public class MateriaDAO {
         
         try{  
             Connection con = bdConexion.getConnection();  
-            PreparedStatement ps = con.prepareStatement("update materia set clave_materia=?,nombre=?,abreviatura_carrera=?,carrera=?,semestre=?,horas_t=?,horas_p=?,creditos=? where id_materia=?");  
+            PreparedStatement ps = con.prepareStatement("UPDATE materia SET clave_materia=?,nombre=?,abreviatura_carrera=?,carrera=?,semestre=?,horas_t=?,horas_p=?,creditos=? where id_materia=?");  
             ps.setString(1, m.getClave_materia());  
             ps.setString(2, m.getNombre());
             ps.setString(3, m.getAbreviaturaCarrera());
@@ -53,10 +53,10 @@ public class MateriaDAO {
             ps.setInt(6, m.getHoras_t());
             ps.setInt(7, m.getHoras_p());
             ps.setInt(8, m.getCreditos());
-            ps.setInt(9, m.getIdMateria());
+            ps.setInt(9, m.getId_materia());
               
             status = ps.executeUpdate();  
-              
+            
             con.close();  
         }catch(Exception ex){
         	ex.printStackTrace();
@@ -65,17 +65,16 @@ public class MateriaDAO {
         return status;  
     }
 	
-	public static int borrarMateria(int id){  
+	public static int borrarMateria(int id_materia){  
 		BD bdConexion = new BD();
         int status = 0;  
-        String instruccion = "delete from materia where id_materia=?";
         
         try{  
             Connection con = bdConexion.getConnection();  
-            PreparedStatement ps = con.prepareStatement(instruccion);  
-            ps.setInt(1,id);  
+            PreparedStatement ps = con.prepareStatement("delete from materia where id_materia=?");  
+            ps.setInt(1,id_materia);  
             status=ps.executeUpdate();  
-              
+            
             con.close();  
         }catch(Exception e){
         	e.printStackTrace();
@@ -95,7 +94,7 @@ public class MateriaDAO {
             ps.setInt(1,id);  
             ResultSet rs = ps.executeQuery();  
             if(rs.next()){ 
-                m.setIdMateria(rs.getInt(1)); 
+                m.setId_materia(rs.getInt(1)); 
                 m.setClave_materia(rs.getString(2));
                 m.setNombre(rs.getString(3));  
                 m.setAbreviaturaCarrera(rs.getString(4));  
@@ -124,7 +123,7 @@ public class MateriaDAO {
             ResultSet rs = ps.executeQuery();  
             while(rs.next()){  
                 Materia m = new Materia();  
-                m.setIdMateria(rs.getInt(1)); 
+                m.setId_materia(rs.getInt(1)); 
                 m.setClave_materia(rs.getString(2));
                 m.setNombre(rs.getString(3));  
                 m.setAbreviaturaCarrera(rs.getString(4));  
@@ -155,7 +154,7 @@ public class MateriaDAO {
             ResultSet rs = ps.executeQuery(); 
             while(rs.next()){  
                 Materia m = new Materia();  
-                m.setIdMateria(rs.getInt(1)); 
+                m.setId_materia(rs.getInt(1)); 
                 m.setClave_materia(rs.getString(2));
                 m.setNombre(rs.getString(3));  
                 m.setAbreviaturaCarrera(rs.getString(4));  

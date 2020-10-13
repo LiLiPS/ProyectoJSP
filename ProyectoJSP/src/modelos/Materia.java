@@ -5,12 +5,12 @@ public class Materia {
 	// horas_t: teóricas horas_p: prácticas
 	private int id_materia, semestre, creditos, horas_t, horas_p;	
 	private String clave_materia, nombre, carrera, abreviaturaCarrera;
-
-	public int getIdMateria() {
-		return id_materia;
+	
+	public int getId_materia() {
+		return id_materia;		
 	}
 
-	public void setIdMateria(int id_materia) {
+	public void setId_materia(int id_materia) {
 		this.id_materia = id_materia;
 	}
 

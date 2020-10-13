@@ -68,7 +68,7 @@
 	</c:if>
 	<c:forEach items="${list}" var="m">
 			<tr>
-				<td>${m.getIdMateria()}</td>
+				<td>${m.getId_materia()}</td>
 				<td>${m.getClave_materia()}</td>
 				<td>${m.getNombre()}</td>
 				<td>${m.getAbreviaturaCarrera()}</td>
@@ -77,8 +77,8 @@
 				<td>${m.getHoras_t()}</td>
 				<td>${m.getHoras_p()}</td>
 				<td>${m.getCreditos()}</td>				
-				<td><a href="editarMateria.jsp?id=${m.getIdMateria()}">Editar</a></td>
-				<td><a href="borrarMateria.jsp?id=${m.getIdMateria()}">Borrar</a></td>
+				<td><a href="editarMateria.jsp?id=${m.getId_materia()}">Editar</a></td>
+				<td><a href="eliminarMateria.jsp?id=${m.getId_materia()}">Borrar</a></td>
 			</tr>
 		</c:forEach>
 	</table>
