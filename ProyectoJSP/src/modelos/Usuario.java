@@ -7,12 +7,20 @@ public class Usuario {
 	//titulo: Ing. Lic.
 	private String clave_usuario, titulo, nombre, apellido_materno, apellido_paterno, usuario, contrasena, rol;
 
-	public int getIdUsuario() {
+	public int getId_usuario() {
 		return id_usuario;
 	}
 
-	public void setIdUsuario(int id_usuario) {
+	public String getClave_usuario() {
+		return clave_usuario;
+	}
+
+	public void setId_usuario(int id_usuario) {
 		this.id_usuario = id_usuario;
+	}
+
+	public void setClave_usuario(String clave_usuario) {
+		this.clave_usuario = clave_usuario;
 	}
 
 	public int getHoras() {
@@ -21,14 +29,6 @@ public class Usuario {
 
 	public void setHoras(int horas) {
 		this.horas = horas;
-	}
-
-	public String getClaveUsuario() {
-		return clave_usuario;
-	}
-
-	public void setClaveUsuario(String clave_usuario) {
-		this.clave_usuario = clave_usuario;
 	}
 
 	public String getTitulo() {

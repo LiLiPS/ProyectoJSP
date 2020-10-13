@@ -4,8 +4,7 @@
 <%@ page import="DAO.MateriaDAO, modelos.Materia, javax.servlet.http.HttpSession, java.util.ArrayList, java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 
-<%
- 
+<% 
 	String estadoPagina = "nada";
 	String sid = request.getParameter("claveM");
 	String clave = sid;
