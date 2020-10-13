@@ -35,6 +35,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Lista de materias</title>
+<link rel="stylesheet" href="estilos/tablas.css">
 </head>
 <body>
 	<h2>Materias</h2>

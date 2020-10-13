@@ -5,7 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Administración de materias</title><style>
+<title>Administración de materias</title>
+<link rel="stylesheet" href="estilos/estiloLogin.css">
+<!--  <style>
 body {
 	background: #FDD761;
 	font-family: 'Lucida Sans Unicode', 'Arial', serif;
@@ -36,24 +38,27 @@ td {
 input{
 	border-radius: 10px 10px 10px 10px;
 }
-</style>
+</style>-->
 </head>
 <body>
-	<h1 style="text-align: center">Login</h1>
+	<div class="body"></div>
+	<div class="grad"></div>
+	<div class="header">
+		<div><h1>LOGIN</h1></div>
+	</div>
+	
 	<form action="compruebaUsuario.jsp" method="post">
-		<div>
+		<div class="login">
 			<table>
 				<tr>
-					<td><label for="usuario">Usuario: </label></td>
-					<td><input type="text" name="usuario" id="usuario"></td>
+					<td><input type="text" name="usuario" id="usuario" placeholder="Usuario"></td>
 				</tr>
 				<tr>
-					<td><label for="contrasena">Contraseña: </label></td>
-					<td><input type="password" name="contrasena" id="contrasena"></td>
+					<td><input type="password" name="contrasena" id="contrasena" placeholder="Contraseña"></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center"><input type="submit"
-						name="button" id="button" value="Entrar"></td>
+					<td colspan="2" align="center"><button type="submit"
+						name="button" id="button">Entrar</button></td>
 				</tr>
 			</table>
 		</div>
