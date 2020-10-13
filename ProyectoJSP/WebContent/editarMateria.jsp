@@ -21,11 +21,11 @@
 		<div>
 			<table>
 				<tr>
-					<td><input type="hidden" name="idMateria" id="idMateria" value="<%=m.getIdMateria() %>"></td>
+					<td><input type="hidden" name="id_materia" id="id_materia" value="<%=m.getIdMateria() %>"></td>
 				</tr>
 				<tr>
-					<td><label for="clave">Clave materia: </label></td>
-					<td><input type="text" name="clave" id="clave" value="<%=m.getClave_materia()%>"></td>
+					<td><label for="clave_materia">Clave materia: </label></td>
+					<td><input type="text" name="clave_materia" id="clave_materia" value="<%=m.getClave_materia()%>"></td>
 				</tr>
 				<tr>
 					<td><label for="nombre">Nombre: </label></td>
@@ -44,12 +44,12 @@
 					<td><input type="number" name="semestre" id="semestre" value="<%=m.getSemestre()%>"></td>
 				</tr>
 				<tr>
-					<td><label for="horasT">Horas teóricas: </label></td>
-					<td><input type="text" name="horasT" id="horasT" value="<%=m.getHoras_t()%>"></td>
+					<td><label for="horas_t">Horas teóricas: </label></td>
+					<td><input type="text" name="horas_t" id="horas_t" value="<%=m.getHoras_t()%>"></td>
 				</tr>
 				<tr>
-					<td><label for="horasP">Horas prácticas: </label></td>
-					<td><input type="text" name="horasP" id="horasP" value="<%=m.getHoras_p()%>"></td>
+					<td><label for="horas_p">Horas prácticas: </label></td>
+					<td><input type="text" name="horas_p" id="horas_p" value="<%=m.getHoras_p()%>"></td>
 				</tr>
 				<tr>
 					<td><label for="creditos">Créditos: </label></td>

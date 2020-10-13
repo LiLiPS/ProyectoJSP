@@ -15,12 +15,10 @@ public class MateriaDAO {
 	public static int guardarMateria(Materia m){ 
 		BD bdConexion = new BD();
         int status = 0; 
-        String instruccion = "INSERT INTO materia(clave_materia,nombre,abreviatura_carrera,"
-        					+ "carrera,semestre, horas_t, horas_p, creditos) values (?,?,?,?,?,?,?,?)";
         
         try{  
             Connection con = bdConexion.getConnection();  
-            PreparedStatement ps = con.prepareStatement(instruccion);  
+            PreparedStatement ps = con.prepareStatement("INSERT INTO materia(clave_materia,nombre,abreviatura_carrera,carrera,semestre, horas_t, horas_p, creditos) values (?,?,?,?,?,?,?,?)");  
             ps.setString(1, m.getClave_materia());  
             ps.setString(2, m.getNombre());
             ps.setString(3, m.getAbreviaturaCarrera());
@@ -43,12 +41,10 @@ public class MateriaDAO {
 	public static int actualizarMateria(Materia m){  
 		BD bdConexion = new BD();
         int status = 0;  
-        String instruccion = "update materia set clave_materia=?,nombre=?,abreviatura_carrera=?,"
-        					+ "carrera=?, semestre=?, horas_t=?, horas_p=?, creditos=? where id_materia=?";
         
         try{  
             Connection con = bdConexion.getConnection();  
-            PreparedStatement ps = con.prepareStatement(instruccion);  
+            PreparedStatement ps = con.prepareStatement("update materia set clave_materia=?,nombre=?,abreviatura_carrera=?,carrera=?,semestre=?,horas_t=?,horas_p=?,creditos=? where id_materia=?");  
             ps.setString(1, m.getClave_materia());  
             ps.setString(2, m.getNombre());
             ps.setString(3, m.getAbreviaturaCarrera());

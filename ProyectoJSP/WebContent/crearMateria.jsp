@@ -14,8 +14,8 @@
 		<div>
 			<table>
 				<tr>
-					<td><label for="clave">Clave materia: </label></td>
-					<td><input type="text" name="clave" id="clave"></td>
+					<td><label for="clave_materia">Clave materia: </label></td>
+					<td><input type="text" name="clave_materia" id="clave_materia"></td>
 				</tr>
 				<tr>
 					<td><label for="nombre">Nombre: </label></td>
@@ -34,12 +34,12 @@
 					<td><input type="number" name="semestre" id="semestre"></td>
 				</tr>
 				<tr>
-					<td><label for="horasT">Horas teóricas: </label></td>
-					<td><input type="text" name="horasT" id="horasT"></td>
+					<td><label for="horas_t">Horas teóricas: </label></td>
+					<td><input type="text" name="horas_t" id="horas_t"></td>
 				</tr>
 				<tr>
-					<td><label for="horasP">Horas prácticas: </label></td>
-					<td><input type="text" name="horasP" id="horasP"></td>
+					<td><label for="horas_p">Horas prácticas: </label></td>
+					<td><input type="text" name="horas_p" id="horas_p"></td>
 				</tr>
 				<tr>
 					<td><label for="creditos">Créditos: </label></td>
