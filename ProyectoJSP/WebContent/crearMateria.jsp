@@ -10,7 +10,7 @@
 <body>
 
 <h1 style="text-align: center">Añadir una materia</h1>
-	<form action="datos.jsp" method="post">
+	<form action="nuevaMateria.jsp" method="post">
 		<div>
 			<table>
 				<tr>
@@ -38,7 +38,7 @@
 					<td><input type="text" name="horasT" id="horasT"></td>
 				</tr>
 				<tr>
-					<td><label for="horasP">Horas teóricas: </label></td>
+					<td><label for="horasP">Horas prácticas: </label></td>
 					<td><input type="text" name="horasP" id="horasP"></td>
 				</tr>
 				<tr>

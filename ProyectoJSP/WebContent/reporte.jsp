@@ -9,6 +9,7 @@
 </head>
 
 <body>
+	<a href="menu.jsp">Regresar a menú</a>
 	<h1>Reporte de materias</h1>
 	<h4>
 		INSTITUTO TECNOLÓGICO DE LEÓN <br>

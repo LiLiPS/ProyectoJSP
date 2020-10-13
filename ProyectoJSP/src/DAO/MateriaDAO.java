@@ -44,7 +44,7 @@ public class MateriaDAO {
 		BD bdConexion = new BD();
         int status = 0;  
         String instruccion = "update materia set clave_materia=?,nombre=?,abreviatura_carrera=?,"
-        					+ "carrera=? semestre=? horas_t=? horas_p=? creditos=? where id_materia=?";
+        					+ "carrera=?, semestre=?, horas_t=?, horas_p=?, creditos=? where id_materia=?";
         
         try{  
             Connection con = bdConexion.getConnection();  

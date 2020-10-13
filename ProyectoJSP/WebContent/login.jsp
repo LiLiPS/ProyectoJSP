@@ -1,10 +1,11 @@
-<!-- Parada SÃ¡nchez Liliana -->
+<!-- Parada Sánchez Liliana -->
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Login</title>
-<style>
+<meta charset="UTF-8">
+<title>Administración de materias</title><style>
 body {
 	background: #FDD761;
 	font-family: 'Lucida Sans Unicode', 'Arial', serif;
@@ -47,7 +48,7 @@ input{
 					<td><input type="text" name="usuario" id="usuario"></td>
 				</tr>
 				<tr>
-					<td><label for="contrasena">ContraseÃ±a: </label></td>
+					<td><label for="contrasena">Contraseña: </label></td>
 					<td><input type="password" name="contrasena" id="contrasena"></td>
 				</tr>
 				<tr>
@@ -55,11 +56,11 @@ input{
 						name="button" id="button" value="Entrar"></td>
 				</tr>
 			</table>
-			<label>No tienes cuenta? RegÃ­strate <a href="registro.html">Aqui</a></label>
 		</div>
 		<p>
 			<br>
 		</p>
 	</form>
+
 </body>
 </html>
