@@ -1,10 +1,11 @@
 <!-- Parada Sánchez Liliana -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="DAO.MateriaDAO, modelos.Materia, javax.servlet.http.HttpSession, java.util.ArrayList, java.util.List" %>
+<%@ page import="DAO.MateriaDAO, modelos.Materia, modelos.Usuario, javax.servlet.http.HttpSession, java.util.ArrayList, java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 
-<% 
+<%
+
 	String estadoPagina = "nada";
 	String sid = request.getParameter("claveM");
 	String clave = sid;
@@ -38,6 +39,16 @@
 <link rel="stylesheet" href="estilos/tablas.css">
 </head>
 <body>
+
+	<% 
+		Usuario us = (Usuario)session.getAttribute("usu");
+		if(us == null){
+	%>
+	<script type="text/javascript">
+		window.location.href = "http://localhost:9090/ProyectoJSP/login.jsp"
+	</script>
+	<%} 
+	%>
 	<h2>Materias</h2>
 	
 	<a href="crearMateria.jsp">Agregar nueva materia</a>

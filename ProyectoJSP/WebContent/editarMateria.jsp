@@ -1,7 +1,7 @@
 <!-- Parada Sánchez Liliana -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="DAO.MateriaDAO, modelos.Materia" %>
+<%@ page import="DAO.MateriaDAO, modelos.Materia, modelos.Usuario" %>
 
 <%
 	String sid = request.getParameter("id");
@@ -16,6 +16,15 @@
 <title>Editar materia</title>
 </head>
 <body>
+<% 
+		Usuario us = (Usuario)session.getAttribute("usu");
+		if(us == null){
+	%>
+	<script type="text/javascript">
+		window.location.href = "http://localhost:9090/ProyectoJSP/login.jsp"
+	</script>
+	<%} 
+	%>
 <h1 style="text-align: center">Editar una materia</h1>
 	<form action="editar.jsp" method="post">
 		<div>

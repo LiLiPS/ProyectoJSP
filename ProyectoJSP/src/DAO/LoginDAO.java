@@ -34,7 +34,7 @@ public class LoginDAO {
 	public static Usuario rolUsuario(String name, String pass) {
 		BD bdConexion = new BD();
 		Usuario us = new Usuario();
-		String instruccion = "select titulo, nombre, apellido_paterno, apellido_materno, rol from usuario where usuario=? and contrasena=?";		
+		String instruccion = "select id_usuario, titulo, nombre, apellido_paterno, apellido_materno, rol from usuario where usuario=? and contrasena=?";		
 		
 		try {
 			Connection con = bdConexion.getConnection();
@@ -44,11 +44,12 @@ public class LoginDAO {
 
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()) {
-				us.setTitulo(rs.getString(1));
-				us.setNombre(rs.getString(2));
-				us.setApellido_paterno(rs.getString(3));
-				us.setApellido_materno(rs.getString(4));
-				us.setRol(rs.getString(5));
+				us.setId_usuario(rs.getInt(1));
+				us.setTitulo(rs.getString(2));
+				us.setNombre(rs.getString(3));
+				us.setApellido_paterno(rs.getString(4));
+				us.setApellido_materno(rs.getString(5));
+				us.setRol(rs.getString(6));
 			}
 			
 			con.close(); 

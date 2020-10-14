@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Comprueba usuario</title>
 </head>
 <body>
 <%
@@ -18,9 +18,11 @@
 	if (LoginDAO.validar(n, p)) {
 		Usuario us = LoginDAO.rolUsuario(n, p);
 		HttpSession session = request.getSession();
+		session.setAttribute("usu", us);
 		session.setAttribute("titulo", us.getTitulo());
 		session.setAttribute("usuario", us.getNombre());
 		session.setAttribute("rol", us.getRol());
+		session.setAttribute("id_usuario", us.getId_usuario());
 		pagina = "/menu.jsp";
 	} else {
 		out.print("Lo sentimos, error de usuario o contraseña!");

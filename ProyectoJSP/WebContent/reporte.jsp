@@ -1,23 +1,56 @@
 <!-- Parada Sánchez Liliana -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="DAO.ReporteDAO, modelos.Reporte, javax.servlet.http.HttpSession, java.util.ArrayList, java.util.List" %>
+<%@ page import="DAO.ReporteDAO, modelos.Reporte, modelos.Usuario, javax.servlet.http.HttpSession, java.util.ArrayList, java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
     
-<%
-	String sid = request.getParameter("id");
-	int id = Integer.parseInt(sid);
-	
-	List<Reporte> reportes = ReporteDAO.getReportesById(id);
-	request.setAttribute("reportes", reportes);
-%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Reporte de materias</title>
 </head>
+<%
+	Usuario us = (Usuario)session.getAttribute("usu");
+	int horas = 0;
 
+	if(us == null){
+%>
+		<script type="text/javascript">
+			window.location.href="http://localhost:9090/ProyectoJSP/login.jsp"
+		</script>
+<%} else{
+	String sid = request.getParameter("id");
+	int id = Integer.parseInt(sid);
+	
+	List<Reporte> reportes = ReporteDAO.getReportesById(id);
+	request.setAttribute("reportes", reportes);
+	
+	
+	
+	for(Reporte reporte : reportes) {
+		if(!(reporte.getLunes()).isEmpty()) {
+			horas += 2;
+		}
+		
+		if(!(reporte.getMartes()).isEmpty()) {
+			horas += 2;
+		}
+		
+		if(!(reporte.getMiercoles()).isEmpty()) {
+			horas += 2;
+		}
+		
+		if(!(reporte.getJueves()).isEmpty()) {
+			horas += 2;
+		}
+		
+		if(!(reporte.getViernes()).isEmpty()) {
+			horas += 1;
+		}
+	}
+}
+%>
 <body>
 	<a href="menu.jsp">Regresar a menú</a>
 	<h1>Reporte de materias</h1>
@@ -42,15 +75,15 @@
 		</tr>
 		<tr>
 			<td>Horas asignadas en Licenciatura</td>
-			<td></td>
+			<td><%=horas%></td>
 		</tr>
 		<tr>
 			<td>Horas asignadas en Posgrado</td>
-			<td></td>
+			<td>0</td>
 		</tr>
 		<tr>
 			<td>Total de horas asignadas</td>
-			<td></td>
+			<td><%=horas%></td>
 		</tr>
 	</table>
 	
