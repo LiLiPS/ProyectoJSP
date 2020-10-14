@@ -39,16 +39,23 @@
 <link rel="stylesheet" href="estilos/tablas.css">
 </head>
 <body>
-
-	<% 
-		Usuario us = (Usuario)session.getAttribute("usu");
-		if(us == null){
-	%>
-	<script type="text/javascript">
-		window.location.href = "http://localhost:9090/ProyectoJSP/login.jsp"
-	</script>
-	<%} 
-	%>
+	
+	<%
+		String usuario;
+		String rol;
+		
+		if(session.getAttribute("usuario")!=null && session.getAttribute("rol")!=null){
+			usuario = session.getAttribute("usuario").toString(); 
+			rol = session.getAttribute("rol").toString();
+			
+			if(rol.equals("maestro")){
+				out.print("<script>location.replace('menu.jsp');</script>");
+			}
+			
+		}else{
+			out.print("<script>location.replace('login.jsp');</script>");
+		}
+		%>
 	<h2>Materias</h2>
 	
 	<a href="crearMateria.jsp">Agregar nueva materia</a>

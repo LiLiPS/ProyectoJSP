@@ -4,7 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="DAO.LoginDAO, modelos.Usuario"%>
     
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +16,8 @@
 	int id=0;
 	
 	if(us == null){
-%>
-		<script type="text/javascript">
-			window.location.href="http://localhost:9090/ProyectoJSP/login.jsp"
-		</script>
-<%} else{
+		out.print("<script>location.replace('login.jsp');</script>");
+	} else{
 	usuario = (String)session.getAttribute("usuario");
 	titulo = (String)session.getAttribute("titulo");
 	rol = (String)session.getAttribute("rol");

@@ -37,10 +37,27 @@
 <title>Lista de materias</title>
 </head>
 <body>
+	<%
+	String usuario;
+	String rol;
+	
+	if(session.getAttribute("usuario")!=null && session.getAttribute("rol")!=null){
+		usuario = session.getAttribute("usuario").toString(); 
+		rol = session.getAttribute("rol").toString();
+		
+		if(rol.equals("maestro")){
+			out.print("<script>location.replace('menu.jsp');</script>");
+		}
+		
+	}else{
+		out.print("<script>location.replace('login.jsp');</script>");
+	}
+	%>
+
 	<h2>Maestros</h2>
 	
 	<form action='maestros.jsp' method='GET'>
-		<h4>Buscar una maestro</h4>
+		<h4>Buscar un maestro</h4>
 		<input type='text' placeholder='Clave de maestro' name='claveM'>
 		<input type='submit' name='buscar' value='Buscar'>
 		<input type='hidden' name='sts' value='buscar'>

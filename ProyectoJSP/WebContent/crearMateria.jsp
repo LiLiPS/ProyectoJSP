@@ -1,6 +1,7 @@
 <!-- Parada Sánchez Liliana -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="modelos.Usuario"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,20 @@
 <title>Crear una materia</title>
 </head>
 <body>
+
+<%
+Usuario us = (Usuario)session.getAttribute("usu");
+String rol;
+
+if(us == null){
+	out.print("<script>location.replace('login.jsp');</script>");
+} else{
+	rol = session.getAttribute("rol").toString();
+	if(rol.equals("maestro")){
+		out.print("<script>location.replace('menu.jsp');</script>");
+	}	
+}
+%>
 
 <h1 style="text-align: center">Añadir una materia</h1>
 	<form action="nuevaMateria.jsp" method="post">

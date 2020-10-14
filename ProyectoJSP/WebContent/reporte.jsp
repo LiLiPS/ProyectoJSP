@@ -15,18 +15,13 @@
 	int horas = 0;
 
 	if(us == null){
-%>
-		<script type="text/javascript">
-			window.location.href="http://localhost:9090/ProyectoJSP/login.jsp"
-		</script>
-<%} else{
+		out.print("<script>location.replace('login.jsp');</script>");
+	} else{
 	String sid = request.getParameter("id");
 	int id = Integer.parseInt(sid);
 	
 	List<Reporte> reportes = ReporteDAO.getReportesById(id);
 	request.setAttribute("reportes", reportes);
-	
-	
 	
 	for(Reporte reporte : reportes) {
 		if(!(reporte.getLunes()).isEmpty()) {
@@ -134,47 +129,7 @@
 			</tr>
 		</tbody>
 		</c:forEach>
-	</table>
-	
-	<br><br>
-	
-	<p>
-		NOTA: Los horarios coloreados (columnas LUNES a VIERNES) están <br>
-		asignados en el laboratorio indicado. Los horarios no coloreados <br>
-		están asignados en el aula marcada en la columna correspondiente.
-	</p>
-	<table>
-	<tr>
-		<td>L1</td>
-		<td style="background-color:#28A4FE" width="50%"/>
-		<td>D14</td>
-	</tr>
-	<tr>
-		<td>L2</td>
-		<td style="background-color:#4DFE4D" width="50%"/>
-		<td>D15</td>
-	</tr>
-	<tr>
-		<td>LBD</td>
-		<td style="background-color:#FD424D" width="50%"/>
-		<td>D11</td>
-	</tr>
-	<tr>
-		<td>LDS</td>
-		<td style="background-color:#FDFA42" width="50%"/>
-		<td>D13</td>
-	</tr>
-	<tr>
-		<td>LH</td>
-		<td style="background-color:#CDCDCD" width="50%"/>
-		<td>D12</td>
-	</tr>
-	<tr>
-		<td>LCC</td>
-		<td style="background-color:#FFCF97" width="50%"/>
-		<td>LC3</td>
-	</tr>
-	</table>
+	</table>	
 	
 </body>
 </html>
