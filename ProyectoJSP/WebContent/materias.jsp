@@ -56,6 +56,7 @@
 			out.print("<script>location.replace('login.jsp');</script>");
 		}
 		%>
+	<a href="menu.jsp">Regresar a menú</a>
 	<h2>Materias</h2>
 	
 	<a href="crearMateria.jsp">Agregar nueva materia</a>

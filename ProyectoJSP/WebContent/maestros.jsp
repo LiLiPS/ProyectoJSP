@@ -53,7 +53,7 @@
 		out.print("<script>location.replace('login.jsp');</script>");
 	}
 	%>
-
+	<a href="menu.jsp">Regresar a menú</a>
 	<h2>Maestros</h2>
 	
 	<form action='maestros.jsp' method='GET'>
