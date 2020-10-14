@@ -13,7 +13,7 @@ CREATE TABLE usuario(
 	contrasena VARCHAR(255) NOT NULL,
 	horas INT NULL,
 	rol VARCHAR(255) NOT NULL	
-)
+);
 
 CREATE TABLE materia(
 	id_materia INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -25,7 +25,7 @@ CREATE TABLE materia(
 	horas_t INT NOT NULL,
 	horas_p INT NOT NULL,
 	creditos INT NOT NULL
-)
+);
 
 CREATE TABLE horario(
 	id_horario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -42,7 +42,7 @@ CREATE TABLE horario(
 	viernes VARCHAR(255) NULL,
 	periodo VARCHAR(255) NULL,
 	turno VARCHAR(255) NULL,
-	alumnos INT NULL
+	alumnos INT NULL,
 	FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
 	FOREIGN KEY (id_materia) REFERENCES materia(id_materia)
 )

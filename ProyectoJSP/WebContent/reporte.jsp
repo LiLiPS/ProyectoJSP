@@ -1,16 +1,15 @@
 <!-- Parada Sánchez Liliana -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="DAO.UsuarioDAO, modelos.Usuario, javax.servlet.http.HttpSession, java.util.ArrayList, java.util.List" %>
+<%@ page import="DAO.ReporteDAO, modelos.Reporte, javax.servlet.http.HttpSession, java.util.ArrayList, java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
     
 <%
 	String sid = request.getParameter("id");
 	int id = Integer.parseInt(sid);
 	
-	Usuario us = UsuarioDAO.getUsuariobyID(id);
-	String nombre = us.getNombre();
-	//List<Materia> list = new ArrayList<Materia>();
+	List<Reporte> reportes = ReporteDAO.getReportesById(id);
+	request.setAttribute("reportes", reportes);
 %>
 <!DOCTYPE html>
 <html>
@@ -31,15 +30,15 @@
 	<table>
 		<tr>
 			<td>Nombre del Maestro</td>
-			<td></td>
+			<td>${reportes[0].getNombreMaestro()}</td>
 		</tr>
 		<tr>
 			<td>Clave del Maestro</td>
-			<td></td>
+			<td>${reportes[0].getClave_maestro()}</td>
 		</tr>
 		<tr>
 			<td>Horas por impartir</td>
-			<td></td>
+			<td>${reportes[0].getHoras()}</td>
 		</tr>
 		<tr>
 			<td>Horas asignadas en Licenciatura</td>
@@ -79,10 +78,29 @@
 				<th>Créditos</th>
 			</tr>
 		</thead>
+		<c:forEach items="${reportes}" var="reporte" varStatus="contador">
 		<tbody>
 			<tr>
+				<td>${contador.index+1}</td>
+				<td>${reporte.getClave_grupo()}</td>
+				<td>${reporte.getClave_materia()}</td>
+				<td>${reporte.getMateria()}</td>
+				<td>${reporte.getGrupo()}</td>
+				<td>${reporte.getAula()}</td>
+				<td>${reporte.getAlumnos()}</td>
+				<td>${reporte.getAbreviaturaCarrera()}</td>
+				<td>${reporte.getSemestre()}</td>
+				<td>${reporte.getLunes()}</td>
+				<td>${reporte.getMartes()}</td>
+				<td>${reporte.getMiercoles()}</td>
+				<td>${reporte.getJueves()}</td>
+				<td>${reporte.getViernes()}</td>
+				<td>${reporte.getHoras_t()}</td>
+				<td>${reporte.getHoras_p()}</td>
+				<td>${reporte.getCreditos()}</td>
 			</tr>
 		</tbody>
+		</c:forEach>
 	</table>
 	
 	<br><br>

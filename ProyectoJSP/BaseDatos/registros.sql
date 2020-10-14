@@ -117,13 +117,15 @@ values('ACF0901', 'CÁLCULO DIFERENCIAL', 'ISX', 'INGENIERÍA EN SISTEMAS COMPUTAC
 	  ('DAD1404', 'ARQUITECTURA DE APLICACIONES EMPRESARIALES', 'ISX', 'INGENIERÍA EN SISTEMAS COMPUTACIONALES', 9, 2, 3, 5),
 	  ('DAB1405', 'DESARROLLO DE APLICACIONES PARA DISPOSITIVOS MÓVILES', 'ISX', 'INGENIERÍA EN SISTEMAS COMPUTACIONALES', 9, 2, 3, 5);
 	  
+INSERT INTO horario (id_usuario,id_materia,clave_horario,clave_grupo,grupo,aula,lunes,martes,miercoles,jueves,viernes,periodo,turno,alumnos)
+values(2, 1,'4007','G01','A','D1','','08:45-10:25','','08:45-10:25','09:35-10:25','Agosto-Diciembre/2020','Matutino',34),
+	  (3, 1,'4008','G01','B','D2','','07:00-08:40','','07:00-08:40','07:50-08:40','Agosto-Diciembre/2020','Matutino',25),
+	  (4, 1,'4009','G03','C','D3','','12:15-13:55','','12:15-13:55','13:05-13:55','Agosto-Diciembre/2020','Matutino',35),
+	  (4, 1,'4010','G04','D','D4','','10:30-12:10','','10:30-12:10','11:20-12:10','Agosto-Diciembre/2020','Matutino',30);
 	  
 	  
-	  
-	  
-	  
-	  
-	  
+
+
 	  
 	  
 	  
