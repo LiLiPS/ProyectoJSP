@@ -48,7 +48,21 @@
 </ul>
 </header>
 
-<% out.print("<h3>Bienvenido "+titulo +" "+ usuario+" </h3>"); %>
+<% out.print("<h3>Bienvenid@ "+titulo +" "+ usuario+" </h3>"); %>
+<c:if test="${rol == 'jefe'}">
+<h4 style="text-align:center">
+	Para consultar la lista de materias de clic a "Lista de materias" <br>
+	Para consultar el reporte de un maestro de clic a "Lista de maestros" <br>
+	Para consultar la lista de materias con sus horarios de clic a "Sabana"
+	
+</h4>
+</c:if>
+<c:if test="${rol == 'maestro' }">
+<h4 style="text-align:center">
+	Para consultar el reporte de sus materias de clic en "Reporte de materias"
+	
+</h4>
+</c:if>
 
 
 </body>

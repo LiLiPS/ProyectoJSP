@@ -8,6 +8,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="estilos/tablas2.css">
+<link rel="stylesheet" href="estilos/estilos.css">
 <title>Reporte de materias</title>
 </head>
 <%
@@ -46,45 +48,51 @@
 	}
 }
 %>
-<body>
-	<a href="menu.jsp">Regresar a menú</a>
+<body class="body">
+	<header id="menu">
+		<ul id="button">
+			<li><a href="menu.jsp">Regresar a menú</a></li>
+			<li><a href="logout.jsp">Cerrar sesión</a></li>
+		</ul>
+	</header>
 	<h1>Reporte de materias</h1>
-	<h4>
+	<h4 style="text-align:center">
 		INSTITUTO TECNOLÓGICO DE LEÓN <br>
 		DEPARTAMENTO DE SISTEMAS Y COMPUTACIÓN <br>
 		PROGRAMACIÓN DE AGOSTO A DICIEMBRE 2020 <br>
 	</h4>
 	
-	<table>
+	<div id="contenedor">
+	<table class="datos">
 		<tr>
-			<td>Nombre del Maestro</td>
+			<td id="izq">Nombre del Maestro</td>
 			<td>${reportes[0].getNombreMaestro()}</td>
 		</tr>
 		<tr>
-			<td>Clave del Maestro</td>
+			<td id="izq">Clave del Maestro</td>
 			<td>${reportes[0].getClave_maestro()}</td>
 		</tr>
 		<tr>
-			<td>Horas por impartir</td>
+			<td id="izq">Horas por impartir</td>
 			<td>${reportes[0].getHoras()}</td>
 		</tr>
 		<tr>
-			<td>Horas asignadas en Licenciatura</td>
+			<td id="izq">Horas asignadas en Licenciatura</td>
 			<td><%=horas%></td>
 		</tr>
 		<tr>
-			<td>Horas asignadas en Posgrado</td>
+			<td id="izq">Horas asignadas en Posgrado</td>
 			<td>0</td>
 		</tr>
 		<tr>
-			<td>Total de horas asignadas</td>
+			<td id="izq">Total de horas asignadas</td>
 			<td><%=horas%></td>
 		</tr>
 	</table>
 	
 	<br><br><br>
 	
-	<table>
+	<table class="reporte">
 		<thead>
 			<tr>
 				<th>No.</th>
@@ -130,6 +138,6 @@
 		</tbody>
 		</c:forEach>
 	</table>	
-	
+	</div>
 </body>
 </html>

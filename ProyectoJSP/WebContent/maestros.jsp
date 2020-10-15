@@ -38,7 +38,7 @@
 <link rel="stylesheet" href="estilos/estilos.css">
 <title>Lista de materias</title>
 </head>
-<body>
+<body class="body">
 	<%
 	String usuario;
 	String rol;
@@ -55,9 +55,15 @@
 		out.print("<script>location.replace('login.jsp');</script>");
 	}
 	%>
-	<a href="menu.jsp">Regresar a menú</a>
+	<header id="menu">
+		<ul id="button">
+			<li><a href="menu.jsp">Regresar a menú</a></li>
+			<li><a href="logout.jsp">Cerrar sesión</a></li>
+	</ul>
+	</header>
 	<h2>Maestros</h2>
 	
+	<div id="contenedor">
 	<form action='maestros.jsp' method='GET'>
 		<h4>Buscar un maestro</h4>
 		<input type='text' placeholder='Clave de maestro' name='claveM'>
@@ -68,13 +74,13 @@
 	
 	<table border=1>
 	<tr class="cabecera">
-	<td>No.</td>
-	<td>Clave maestro</td>
-	<td>Título</td>
-	<td>Nombre</td>
-	<td>Apellido paterno</td>
-	<td>Apellido materno</td>
-	<td>Reporte de materias</td>
+	<th>No.</th>
+	<th>Clave maestro</th>
+	<th>Título</th>
+	<th>Nombre</th>
+	<th>Apellido paterno</th>
+	<th>Apellido materno</th>
+	<th>Reporte de materias</th>
 	</tr>
 	<c:if test="list.isEmpty()">
 		<tr><th colspan=11>No se encontraron maestros</th></tr>
@@ -91,5 +97,6 @@
 			</tr>
 		</c:forEach>
 	</table>
+	</div>
 </body>
 </html>

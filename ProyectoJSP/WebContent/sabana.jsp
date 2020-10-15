@@ -8,6 +8,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="estilos/tablas2.css">
+<link rel="stylesheet" href="estilos/estilos.css">
 <title>Sabana de materias y horarios</title>
 </head>
 <%
@@ -27,11 +29,16 @@
 	request.setAttribute("sabana", sabana);
 }
 %>
-<body>
-	<a href="menu.jsp">Regresar a menú</a>
+<body class="body">
+	<header id="menu">
+		<ul id="button">
+			<li><a href="menu.jsp">Regresar a menú</a></li>
+			<li><a href="logout.jsp">Cerrar sesión</a></li>
+	</ul>
+	</header>
 	<h1>Sabana de materias y horarios</h1>
-	
-	<table>
+	<div id="contenedor">
+	<table class="reporte">
 		<thead>
 			<tr>
 				<th>Clave horario</th>
@@ -79,6 +86,6 @@
 		</tbody>
 		</c:forEach>
 	</table>	
-	
+	</div>
 </body>
 </html>
