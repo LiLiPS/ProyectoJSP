@@ -31,6 +31,7 @@
 %>
 <header id="menu">
 	<ul id="button">
+		<li><a href="materias.jsp">Regresar</a></li>
 		<li><a href="menu.jsp">Regresar a menú</a></li>
 		<li><a href="logout.jsp">Cerrar sesión</a></li>
 	</ul>

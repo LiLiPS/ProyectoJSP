@@ -50,7 +50,7 @@
 %>
 <body class="body">
 	<header id="menu">
-		<ul id="button">
+		<ul id="button">		
 			<li><a href="menu.jsp">Regresar a menú</a></li>
 			<li><a href="logout.jsp">Cerrar sesión</a></li>
 		</ul>
