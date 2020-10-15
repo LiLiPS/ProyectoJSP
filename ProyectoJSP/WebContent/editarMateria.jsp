@@ -28,6 +28,7 @@
 		}		
 	}
 %>
+<a href="materias.jsp">Regresar</a>
 <h1 style="text-align: center">Editar una materia</h1>
 	<form action="editar.jsp" method="post">
 		<div>

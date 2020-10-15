@@ -23,7 +23,7 @@ if(us == null){
 	}	
 }
 %>
-
+<a href="materias.jsp">Regresar</a>
 <h1 style="text-align: center">Añadir una materia</h1>
 	<form action="nuevaMateria.jsp" method="post">
 		<div>

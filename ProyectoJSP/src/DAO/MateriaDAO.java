@@ -67,13 +67,13 @@ public class MateriaDAO {
 	
 	public static int borrarMateria(int id_materia){  
 		BD bdConexion = new BD();
-        int status = 0;  
+        int status = 0;
         
         try{  
             Connection con = bdConexion.getConnection();  
-            PreparedStatement ps = con.prepareStatement("delete from materia where id_materia=?");  
-            ps.setInt(1,id_materia);  
-            status=ps.executeUpdate();  
+            PreparedStatement ps = con.prepareStatement("delete from materia where id_materia=?");
+            ps.setInt(1,id_materia);
+            status=ps.executeUpdate();
             
             con.close();  
         }catch(Exception e){

@@ -1,7 +1,7 @@
 <!-- Parada Sánchez Liliana -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="DAO.MateriaDAO, modelos.Usuario"%>
+<%@ page import="DAO.MateriaDAO, DAO.HorarioDAO, modelos.Usuario"%>
 <jsp:useBean id="m" class="modelos.Materia"></jsp:useBean>  
 <jsp:setProperty property="*" name="m"/>
 
@@ -27,6 +27,7 @@
 			String sid = request.getParameter("id");
 			int id = Integer.parseInt(sid);
 			
+			int h = HorarioDAO.borrarHorario(id);
 			int i = MateriaDAO.borrarMateria(id);  
 			response.sendRedirect("materias.jsp");
 		}

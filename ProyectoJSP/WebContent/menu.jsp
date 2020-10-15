@@ -8,7 +8,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<link rel="stylesheet" href="estilos/estilos.css">
 <title>Administración de materias</title>
+<style type="text/css">
+	.body{	
+    background: url(https://lobos.milaulas.com/pluginfile.php/1/theme_eguru/logo/1598504862/Logo%20TecNM%20Horizontal%20gris.png) no-repeat;
+    min-height: 100%;
+    background-size: cover;
+}
+</style>
 </head>
 <%
 	Usuario us = (Usuario)session.getAttribute("usu");
@@ -23,12 +32,9 @@
 	rol = (String)session.getAttribute("rol");
 	id = (int)session.getAttribute("id_usuario");
 }%>
-<body>
-<% out.print("<h3>Bienvenido "+titulo +" "+ usuario+" </h3>"); %>
-
-<h4>Menú</h4>
-
-<ul>
+<body class="body">
+<header id="menu">
+<ul id="button">
 	<c:if test="${rol == 'jefe'}">
 	<li><a href="materias.jsp">Lista de materias</a></li>
 	<li><a href="maestros.jsp">Lista de maestros</a></li>
@@ -40,5 +46,10 @@
 	<li><a href="logout.jsp">Cerrar sesión</a></li>
 	</c:if>
 </ul>
+</header>
+
+<% out.print("<h3>Bienvenido "+titulo +" "+ usuario+" </h3>"); %>
+
+
 </body>
 </html>
