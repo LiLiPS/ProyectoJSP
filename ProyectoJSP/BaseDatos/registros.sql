@@ -115,14 +115,14 @@ values('ACF0901', 'CÁLCULO DIFERENCIAL', 'ISX', 'INGENIERÍA EN SISTEMAS COMPUTAC
 	  ('SCC1012', 'INTELIGENCIA ARTIFICIAL', 'ISX', 'INGENIERÍA EN SISTEMAS COMPUTACIONALES', 9, 2, 2, 4),
 	  ('DAD1403', 'PROGRAMACIÓN WEB AVANZADA', 'ISX', 'INGENIERÍA EN SISTEMAS COMPUTACIONALES', 9, 2, 3, 5),
 	  ('DAD1404', 'ARQUITECTURA DE APLICACIONES EMPRESARIALES', 'ISX', 'INGENIERÍA EN SISTEMAS COMPUTACIONALES', 9, 2, 3, 5),
-	  ('DAB1405', 'DESARROLLO DE APLICACIONES PARA DISPOSITIVOS MÓVILES', 'ISX', 'INGENIERÍA EN SISTEMAS COMPUTACIONALES', 9, 2, 3, 5),
+	  ('DAB1405', 'DESARROLLO DE APLICACIONES PARA DISPOSITIVOS MÓVILES', 'ISX', 'INGENIERÍA EN SISTEMAS COMPUTACIONALES', 9, 2, 3, 5);
 	  
 INSERT INTO horario (id_usuario,id_materia,clave_horario,clave_grupo,grupo,aula,lunes,martes,miercoles,jueves,viernes,periodo,turno,alumnos)
 values(2, 1,'4007','G01','A','D1','','08:45-10:25','','08:45-10:25','09:35-10:25','Agosto-Diciembre/2020','Matutino',34),
 	  (3, 1,'4008','G01','B','D2','','07:00-08:40','','07:00-08:40','07:50-08:40','Agosto-Diciembre/2020','Matutino',25),
 	  (4, 1,'4009','G03','C','D3','','12:15-13:55','','12:15-13:55','13:05-13:55','Agosto-Diciembre/2020','Matutino',35),
 	  (4, 1,'4010','G04','D','D4','','10:30-12:10','','10:30-12:10','11:20-12:10','Agosto-Diciembre/2020','Matutino',30),
-	  (1, 1,'4011','G05','E','D5','10:30-12:10','','10:30-12:10','','10:30-12:10','Agosto-Diciembre/2020','Matutino',31),
+	  (1, 1,'4011','G05','E','D5','10:30-12:10','','10:30-12:10','','10:30-11:20','Agosto-Diciembre/2020','Matutino',31),
 	  (3, 1,'4012','G06','F','X3','12:15-13:55','','12:15-13:55','','12:15-13:05','Agosto-Diciembre/2020','Matutino',7),
 	  (5, 2,'4013','G07','A','LC3','','12:15-13:55','','12:15-13:55','13:05-13:55','Agosto-Diciembre/2020','Matutino',35),
 	  (6, 2,'4014','G08','B','LC3','','10:30-12:10','','10:30-12:10','11:20-12:10','Agosto-Diciembre/2020','Matutino',30),
@@ -148,8 +148,26 @@ values(2, 1,'4007','G01','A','D1','','08:45-10:25','','08:45-10:25','09:35-10:25
 	  (16, 6,'4035','G28','C','D3','07:00-08:40','','07:00-08:40','','','Agosto-Diciembre/2020','Matutino',35),
 	  (16, 6,'4036','G29','D','D4','08:45-10:25','','08:45-10:25','','','Agosto-Diciembre/2020','Matutino',30),
 	  (4, 6,'4037','G30','E','D5','','08:45-10:25','','08:45-10:25','','Agosto-Diciembre/2020','Matutino',32),
-	  
-	  
+	  (17, 7,'4038','G31','A','D8','12:15-13:55','','12:15-13:55','','12:15-13:05','Agosto-Diciembre/2020','Matutino',32),
+	  (18, 7,'4039','G32','B','D8','10:30-12:10','','10:30-12:10','','10:30-11:20','Agosto-Diciembre/2020','Matutino',29),
+	  (19, 8,'4040','G33','A','D3','','07:00-08:40','','07:00-08:40','07:50-08:40','Agosto-Diciembre/2020','Matutino',30),
+	  (20, 9,'4041','G34','A','D15','10:30-12:10','','10:30-12:10','','10:30-11:20','Agosto-Diciembre/2020','Matutino',20),
+	  (5, 9,'4042','G35','B','D15','12:15-13:55','','12:15-13:55','','12:15-13:05','Agosto-Diciembre/2020','Matutino',22),
+	  (5, 9,'4043','G36','C','D15','07:00-08:40','','07:00-08:40','','07:00-07:50','Agosto-Diciembre/2020','Matutino',20),
+	  (20, 9,'4044','G37','D','D15','08:45-10:25','','08:45-10:25','','08:45-09:35','Agosto-Diciembre/2020','Matutino',21),
+	  (11, 10,'4045','G38','A','D2','','10:30-12:10','','10:30-12:10','','Agosto-Diciembre/2020','Matutino',26),
+	  (21, 11,'4046','G39','A','D5','08:45-10:25','','08:45-10:25','','','Agosto-Diciembre/2020','Matutino',30),
+	  (22, 12,'4047','G40','A','X1','','08:45-10:25','','08:45-10:25','09:35-10:25','Agosto-Diciembre/2020','Matutino',33),
+	  (23, 13,'4048','G41','A','F8','12:15-13:55','','12:15-13:55','','12:15-13:05','Agosto-Diciembre/2020','Matutino',35),
+	  (24, 13,'4049','G42','B','F8','10:30-12:10','','10:30-12:10','','10:30-11:20','Agosto-Diciembre/2020','Matutino',36),
+	  (23, 13,'4050','G43','C','F8','08:45-10:25','','08:45-10:25','','08:45-09:35','Agosto-Diciembre/2020','Matutino',37),
+	  (25, 14,'4051','G44','A','D6','10:30-12:10','','10:30-12:10','','10:30-11:20','Agosto-Diciembre/2020','Matutino',27),
+	  (26, 14,'4052','G45','B','D6','12:15-13:55','','12:15-13:55','','12:15-13:05','Agosto-Diciembre/2020','Matutino',26),
+	  (26, 14,'4053','G46','C','D6','07:00-08:40','','07:00-08:40','','07:00-07:50','Agosto-Diciembre/2020','Matutino',22),
+	  (6, 14,'4054','G47','D','D6','08:45-10:25','','08:45-10:25','','08:45-09:35','Agosto-Diciembre/2020','Matutino',25),
+	  (10, 15,'4055','G48','A','D8','07:00-08:40','','07:00-08:40','','07:00-07:50','Agosto-Diciembre/2020','Matutino',27),
+	  (27, 15,'4056','G49','B','D8','08:45-10:25','','08:45-10:25','','08:45-09:35','Agosto-Diciembre/2020','Matutino',32),
+	  (28, 15,'4057','G50','C','F6','10:30-12:10','','10:30-12:10','','10:30-11:20','Agosto-Diciembre/2020','Matutino',36);
 
 
 	  
